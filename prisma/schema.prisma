@@ -1,0 +1,38 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["jsonProtocol"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL") 
+}
+
+model User {
+  id            String       @default(cuid()) @id
+  name          String?
+  email         String?   @unique
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+  posts         Survey[]
+  @@map(name: "users")
+}
+
+model Survey {
+  id        String     @default(cuid()) @id
+  title     String
+  content   Json?
+  published Boolean @default(false)
+  author    User?   @relation(fields: [authorId], references: [id])
+  authorId  String?
+  responses SurveyResponse[]
+}
+
+model SurveyResponse {
+  id        String     @default(cuid()) @id
+  answer   Json
+  surveyId  String
+  survey    Survey    @relation(fields: [surveyId], references: [id])
+}
