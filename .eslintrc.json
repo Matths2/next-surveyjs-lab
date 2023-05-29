@@ -1,0 +1,16 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "plugins": [],
+  "rules": {
+    "eqeqeq": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "no-unused-vars": ["error", { "args": "none" }],
+    "no-alert": "error",
+    "no-debugger": "error",
+    "quotes": ["error", "single"],
+    "semi": "off",
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"]
+  }
+}

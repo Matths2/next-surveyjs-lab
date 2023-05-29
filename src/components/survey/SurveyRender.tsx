@@ -1,9 +1,9 @@
 // components/survey/index.tsx
-import React from "react";
-import { Model } from "survey-core";
-import { Survey } from "survey-react-ui";
-import "survey-core/modern.min.css";
-import { Prisma } from "@prisma/client";
+import React from 'react';
+import { Model } from 'survey-core';
+import { Survey } from 'survey-react-ui';
+import 'survey-core/modern.min.css';
+import { Prisma } from '@prisma/client';
 
 interface SurveyRenderComponentProps {
   content: Prisma.JsonValue;

@@ -1,17 +1,17 @@
-import React from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Header: React.FC = () => {
   const router = useRouter();
   const isActive: (pathname: string) => boolean = (pathname) =>
     router.pathname === pathname;
 
-  let left = (
+  const left = (
     <div className="left">
-      <Link href="/">
-        <a className="bold" data-active={isActive("/")}>
-          Feed
+      <Link href="/" legacyBehavior>
+        <a className="bold" data-active={isActive('/')}>
+          Surveys
         </a>
       </Link>
       <style jsx>{`
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
     </div>
   );
 
-  let right = null;
+  const right = null;
 
   return (
     <nav>

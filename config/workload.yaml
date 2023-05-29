@@ -11,5 +11,5 @@ spec:
     git:
       ref:
         branch: main
-      url: https://github.com/Matths2/tap-nodejs-hello-world 
+      url: https://github.com/Matths2/next-surveyjs-lab
     subPath: node-express-hello-world

@@ -1,32 +1,31 @@
-import React from "react";
-import dynamic from "next/dynamic";
-import { GetStaticProps } from "next";
-import { Survey } from "@prisma/client";
-import { getSurveys } from "../lib/survey";
-import Layout from "../src/components/Layout";
+import React from 'react'
+import dynamic from 'next/dynamic'
+import { GetStaticProps } from 'next'
+import { Survey } from '@prisma/client'
+import { getSurveys } from '../lib/survey'
+import Layout from '../src/components/Layout'
 
 const SurveyComponent = dynamic(
-  () => import("../src/components/survey/SurveyRender"),
+  () => import('../src/components/survey/SurveyRender'),
   {
     ssr: false,
-  }
-);
+  },
+)
 
 export const getStaticProps: GetStaticProps<{
-  surveys: Survey[];
+  surveys: Survey[]
 }> = async () => {
-  return getSurveys();
-};
+  return getSurveys()
+}
 
 type Props = {
-  surveys: Survey[];
-};
+  surveys: Survey[]
+}
 
 const Survey: React.FC<Props> = (props) => {
   return (
     <Layout>
       <div className="page">
-        <h1>Surveys</h1>
         <main>
           {props.surveys.map((survey) => (
             <div key={survey.id}>
@@ -50,7 +49,7 @@ const Survey: React.FC<Props> = (props) => {
         }
       `}</style>
     </Layout>
-  );
-};
+  )
+}
 
-export default Survey;
+export default Survey

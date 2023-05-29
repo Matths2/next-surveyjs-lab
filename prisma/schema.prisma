@@ -3,6 +3,7 @@
 generator client {
   provider = "prisma-client-js"
   previewFeatures = ["jsonProtocol"]
+  binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
 }
 
 datasource db {
@@ -23,7 +24,7 @@ model User {
 model Survey {
   id        String     @default(cuid()) @id
   title     String
-  content   Json?
+  content   Json
   published Boolean @default(false)
   author    User?   @relation(fields: [authorId], references: [id])
   authorId  String?
