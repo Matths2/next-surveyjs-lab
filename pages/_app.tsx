@@ -1,13 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { AppProps } from 'next/app';
-import { SSRProvider } from 'react-bootstrap';
+import { AppProps } from 'next/app'
+import Layout from '../src/components/Layout'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <SSRProvider>
-      <Component {...pageProps} />;
-    </SSRProvider>
-  );
-};
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
+}
 
-export default MyApp;
+export default MyApp
