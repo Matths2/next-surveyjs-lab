@@ -17,11 +17,13 @@ The following steps will get you started with this project.
 
 From root directory run the following commands:
 
-1. `npm install`
-2. `docker-compose build`
-3. `docker-compose up`
+1. `docker-compose build`
+2. `docker-compose up -d`
 
 ### Production
+Be aware that in the current state of the project, the production build is not mature enough to be deployed to a production environment. In the current state, expect build error related to missing environment variable and database connection.
+
+ In addition to these following steps, you will need to setup a postgres service in the cluster and supply environment variable ```DATABASE_URL``` pointing to the service. 
 
 The following steps assumes you have credentials and has a ssh session established to the kubernetes cluster established.
 
@@ -49,10 +51,16 @@ tanzu apps workload create next-surveyjs-lab \
 Write the following command in your terminal to get build status and the url to the application.
 
 ```bash
-tanzu apps workload get -n  node-express
+tanzu apps workload get -n ${YOUR_NAMESPACE} node-express
 ```
 
+Push to the ```main``` branch of this repo will trigger a new build and deployment to the cluster.
 <br>
+
+## TODO
+ * Connect to tanzu postgres database service
+ * Create a seed db script for local development
+ * Improve app GUI, save survey response to database
 
 For more information:
 

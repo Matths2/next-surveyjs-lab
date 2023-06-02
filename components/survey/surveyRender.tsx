@@ -14,8 +14,8 @@ const SurveyRenderComponent: React.FC<SurveyRenderComponentProps> = ({
   const survey = new Model(JSON.stringify(content))
 
   survey.sendResultOnPageNext = true
-  survey.onComplete.add(function (result) {
-    // Write survey results into database
+  survey.onComplete.add((result) => {
+    // TODO: write survey results into database
     console.log(result.data)
   })
 
