@@ -49,7 +49,7 @@ tanzu apps workload create next-surveyjs-lab \
 Write the following command in your terminal to get build status and the url to the application.
 
 ```bash
-tanzu apps workload get -n <namespace> node-express
+tanzu apps workload get -n  node-express
 ```
 
 <br>

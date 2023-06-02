@@ -11,6 +11,8 @@
     "quotes": ["error", "single"],
     "semi": "off",
     "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"]
+    "linebreak-style": ["error", "unix"],
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off"
   }
 }

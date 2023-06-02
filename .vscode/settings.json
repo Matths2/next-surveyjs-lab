@@ -1,5 +1,5 @@
 {
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false, // Disable automatic formatting on save
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
@@ -9,7 +9,6 @@
     "typescript",
     "typescriptreact"
   ],
-  "prettier.eslintIntegration": true,
   "prettier.requireConfig": true,
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 100
