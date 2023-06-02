@@ -12,27 +12,7 @@ services:
       - POSTGRES_USER=username
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=survey_db
-    networks:
-      - app-network
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    restart: always
-    container_name: app
-    depends_on:
-      - survey-db
-    env_file:
-      - .env
-    ports:
-      - 3000:3000
-    networks:
-      - app-network
 
 volumes:
   postgres:
     driver: local
-
-networks:
-  app-network:
-    driver: bridge

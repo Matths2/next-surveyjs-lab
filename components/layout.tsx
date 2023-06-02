@@ -1,9 +1,9 @@
-import Navbar from './Navbar'
+import NavMenu from './navmenu'
 
 export default function Layout({ children }) {
   return (
     <>
-      <Navbar />
+      <NavMenu />
       {children}
       {/* Footer */}
       {/* You can add more things here  */}

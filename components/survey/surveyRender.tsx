@@ -1,4 +1,3 @@
-// components/survey/index.tsx
 import React from 'react'
 import { Model } from 'survey-core'
 import { Survey } from 'survey-react-ui'
@@ -12,11 +11,14 @@ interface SurveyRenderComponentProps {
 const SurveyRenderComponent: React.FC<SurveyRenderComponentProps> = ({
   content,
 }) => {
-  // Create a model
   const survey = new Model(JSON.stringify(content))
 
   survey.sendResultOnPageNext = true
-  // Render the survey
+  survey.onComplete.add(function (result) {
+    // Write survey results into database
+    console.log(result.data)
+  })
+
   return (
     <div>
       <Survey model={survey} />

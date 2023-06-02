@@ -4,7 +4,6 @@ import prisma from './prisma'
 export async function getSurveys() {
   try {
     const surveys = await prisma.survey.findMany({})
-    console.log(surveys)
     return {
       props: {
         surveys: surveys,

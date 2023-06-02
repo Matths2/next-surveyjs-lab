@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-  experimental: {
-    appDir: true,
+  reactStrictMode: true,
+  swcMinify: true,
+  output: 'standalone',
+  i18n: {
+    locales: ['en', 'se'],
+    defaultLocale: 'se',
   },
 }
 

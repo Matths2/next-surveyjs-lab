@@ -1,43 +1,59 @@
-# node-express-hello-world
+# Next Surveyjs tanzu app
 
-This is a starter ExpressJs project, you can run it as a standalone
-app using `npm run server` in the root of the project.
-The server will be listening to request on port `3000`,
-so you can test the server in a browser accessing `http://localhost:3000` or via `cURL`.
+This project use Nextjs and Surveyjs to create a simple survey app.
+The backbone and deployment configurations of this repo is based on a TAP (Tanzu Application Platform) nodejs express accelerator. Which has been modified to contain the following stack:
 
-Before running the command `npm run server` you need to run `npm install` to
-install the dependencies
-# Deploying to Kubernetes
+- Postgres
+- Prisma
+- Nextjs
+- Surveyjs
+- Tailwindcss
 
-> NOTE: The provided `config/workload.yaml` file uses the Git URL for this sample. When you want to modify the source, you must push the code to your own Git repository and then update the `spec.source.git` information in the `config/workload.yaml` file.
+## Getting Started
 
-## Deploying to Kubernetes as a TAP workload with Tanzu CLI
+The following steps will get you started with this project.
 
-When you are done developing your app, you can simply deploy it using:
+### Development
 
-```
-tanzu apps workload apply -f config/workload.yaml
-```
+From root directory run the following commands:
 
-If you would like deploy the code from your local working directory you can use the following command:
+1. `npm install`
+2. `docker-compose build`
+3. `docker-compose up`
 
-```
-tanzu apps workload create node-express-hello-world -f config/workload.yaml \
-  --local-path . \
-  --source-image <REPOSITORY-PREFIX>/node-express-hello-world-source \
-  --type web
-```
+### Production
 
-## Accessing the app deployed to your cluster
+The following steps assumes you have credentials and has a ssh session established to the kubernetes cluster established.
 
-If you don't have `curl` installed it can be installed using downloads here: https://curl.se/download.html
+<br>
+ Write the following command in your terminal to set the namespace you want to deploy to.
 
-Determine the URL to use for the accessing the app by running:
-
-```
-tanzu apps workload get node-express-hello-world
+```bash
+export YOUR_NAMESPACE=<YOUR_NAMESPACE>
 ```
 
-To access the deployed app open the URL shown in your browser.
+<br>
+Write the following command in your terminal to deploy the application to the cluster.
 
-This depends on the TAP installation having DNS configured for the Knative ingress.
+```bash
+tanzu apps workload create next-surveyjs-lab \
+--git-repo https://github.com/Matths2/next-surveyjs-lab \
+--git-branch main \
+--type web \
+--label app.kubernetes.io/part-of=node-express \
+--yes \
+--namespace ${YOUR_NAMESPACE}
+```
+
+<br>
+Write the following command in your terminal to get build status and the url to the application.
+
+```bash
+tanzu apps workload get -n <namespace> node-express
+```
+
+<br>
+
+For more information:
+
+- [Friends TAP confluence](https://confluence.shared.int.tds.tieto.com/x/PKC2EQ)

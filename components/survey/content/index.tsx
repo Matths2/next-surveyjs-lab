@@ -1,4 +1,3 @@
-// components/survey/content/index.tsx
 export const questions = {
   showQuestionNumbers: 'off',
   pages: [
@@ -120,9 +119,9 @@ export const questions = {
           type: 'text',
           name: 'email',
           title:
-            'Thank you for taking our survey. Your survey is almost complete, please enter your email address in the box below if you wish to participate in our drawing, then press the \'Submit\' button.',
+            "Thank you for taking our survey. Your survey is almost complete, please enter your email address in the box below if you wish to participate in our drawing, then press the 'Submit' button.",
         },
       ],
     },
   ],
-};
+}

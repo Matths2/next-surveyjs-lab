@@ -1,5 +1,5 @@
 {
-  "name": "node-express-hello-world",
+  "name": "next-surveyjs-lab",
   "version": "1.0.0",
   "description": "accelerator-description",
   "main": "server.js",
@@ -12,6 +12,7 @@
   },
   "license": "Apache License, Version 2.0",
   "dependencies": {
+    "@material-tailwind/react": "^2.0.1",
     "@prisma/client": "^4.14.1",
     "eslint-config-next": "^13.4.4",
     "next": "^13.4.4",
@@ -24,9 +25,10 @@
     "@types/react": "18.2.7",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.41.0",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.24",
     "prettier": "^2.8.8",
     "prisma": "^4.14.1",
+    "tailwindcss": "^3.3.2",
     "typescript": "5.0.4"
   }
 }

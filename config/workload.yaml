@@ -1,15 +1,15 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: node-express-hello-world
-  namespace: default
+  name: next-surveyjs-lab
+  namespace: holmgmat
   labels:
     apps.tanzu.vmware.com/workload-type: web
-    app.kubernetes.io/part-of: node-express-hello-world
+    app.kubernetes.io/part-of: next-surveyjs-lab
 spec:
   source:
     git:
       ref:
         branch: main
       url: https://github.com/Matths2/next-surveyjs-lab
-    subPath: node-express-hello-world
+    subPath: next-surveyjs-lab

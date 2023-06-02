@@ -10,5 +10,7 @@
     "typescriptreact"
   ],
   "prettier.eslintIntegration": true,
-  "prettier.requireConfig": true
+  "prettier.requireConfig": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 100
 }
